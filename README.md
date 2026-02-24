@@ -1,2 +1,2 @@
-# 2026 ITshow Mony
+# 2026 ITshow Mony Server
 2026년 ITshow 출품작 프로젝트입니다.
