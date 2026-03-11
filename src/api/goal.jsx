@@ -15,7 +15,6 @@ import { supabase } from './supabaseClient'
 
 //db안쪽?에 목표 템플릿 넣기.
 
-
 //목표 생성(저장)
 export async function createGoal(userId, goalData) {
     const { goal_type, period_type, period_detail, salary_timing, target_amount } = goalData;
