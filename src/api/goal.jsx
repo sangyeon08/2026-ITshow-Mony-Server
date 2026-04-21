@@ -37,6 +37,8 @@ export async function createGoal(userId, goalData) {
     }
 }
 
+
+
 //목표 조회
 export async function findGoal(userId) {
     const {data,error} = await supabase

@@ -13,6 +13,8 @@ async function getAccountIds(userId) {
     return data.map(a => a.id);
 }
 
+
+
 // 공통: 날짜 범위 생성 (안전 버전)
 function getDateRange(periodDetail) {
     const [year, month] = periodDetail.split('-');
