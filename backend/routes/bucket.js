@@ -654,4 +654,35 @@ router.delete('/:id', async (req, res, next) => {
     }
 });
 
+// 추억 저장 (img, created_at, day 업데이트)
+router.patch('/:id/memory', async (req, res, next) => {
+    try {
+        const { id } = req.params;
+        const { img, day } = req.body; // created_at 제거, day만 사용
+
+        const { data, error } = await supabase
+            .from('bucket_list')
+            .update({ img, day })  // day에 날짜 + 메모 저장
+            .eq('id', id)
+            .select()
+            .single();
+
+        if (error) {
+            return res.status(400).json({
+                success: false,
+                message: '추억 저장 실패',
+                error: error.message
+            });
+        }
+
+        res.json({
+            success: true,
+            message: '추억이 저장되었습니다',
+            data
+        });
+    } catch (error) {
+        next(error);
+    }
+});
+
 export default router;
